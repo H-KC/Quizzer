@@ -1,27 +1,37 @@
 import React from "react";
-import "./styles/formStyle.css";
-const ClassForm = () => {
+
+const StudentForm = () => {
   return (
     <div className='registration-form'>
       <form>
         <div className='form-group'>
           <input
-            type='text'
+            type='number'
             className='form-control item'
-            placeholder='Class Name'
+            placeholder='Student ID'
+            min='0'
           />
         </div>
+
         <div className='form-group'>
           <input
             type='text'
             className='form-control item'
-            placeholder='Class Description'
+            placeholder='Student Name'
+          />
+        </div>
+
+        <div className='form-group'>
+          <input
+            type='tel'
+            className='form-control item'
+            placeholder='Student Phone'
           />
         </div>
 
         <div className='form-group'>
           <button type='button' className='btn btn-block create-account'>
-            Create Class
+            Add Student
           </button>
         </div>
       </form>
@@ -29,4 +39,4 @@ const ClassForm = () => {
   );
 };
 
-export default ClassForm;
+export default StudentForm;
