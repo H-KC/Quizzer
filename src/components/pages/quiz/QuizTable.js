@@ -1,33 +1,56 @@
 import { Card } from "@material-ui/core";
 import { DataGrid } from "@material-ui/data-grid";
+import { useContext } from "react";
+import ClassContext from "../../../context/class/classContext";
+import QuizContext from "../../../context/quiz/quizContext";
+
 const QuizTable = () => {
+  //inint quiz context
+  const quizContext = useContext(QuizContext);
+  const { quizes, deleteQuiz, setCurrent } = quizContext;
+
+  // inint class quiz
+  const classContext = useContext(ClassContext);
+  const { classes } = classContext;
+
   const columns = [
     { field: "id", headerName: "ID", width: 70 },
-    { field: "firstName", headerName: "First name", width: 130 },
-    { field: "lastName", headerName: "Last name", width: 130 },
-    {
-      field: "age",
-      headerName: "Age",
-      type: "number",
-      width: 90,
-    },
+    { field: "name", headerName: "Name", width: 200 },
+    { field: "classID", headerName: "Class", width: 200 },
+    { field: "nbrQuestions", headerName: "Questions", width: 200 },
+    { field: "nbrPts", headerName: "Pts", width: 200 },
+    { field: "state", headerName: "State", width: 200 },
   ];
 
-  const rows = [
-    { id: 1, lastName: "Snow", firstName: "Jon", age: 35 },
-    { id: 2, lastName: "Lannister", firstName: "Cersei", age: 42 },
-    { id: 3, lastName: "Lannister", firstName: "Jaime", age: 45 },
-    { id: 4, lastName: "Stark", firstName: "Arya", age: 16 },
-    { id: 5, lastName: "Targaryen", firstName: "Daenerys", age: null },
-    { id: 6, lastName: "Melisandre", firstName: null, age: 150 },
-    { id: 7, lastName: "Clifford", firstName: "Ferrara", age: 44 },
-    { id: 8, lastName: "Frances", firstName: "Rossini", age: 36 },
-    { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
-  ];
+  const rows = quizes.map((quiz) => {
+    const className = classes
+      .filter((item) => item.id === quiz.classID)
+      .map((item) => item.name);
+    return {
+      id: quiz.id,
+      name: quiz.name,
+      classID: className,
+      nbrQuestions: quiz.nbrQuestions,
+      nbrPts: quiz.nbrPts,
+      state: quiz.state,
+    };
+  });
+  const handleClick = (e) => {
+    setCurrent(e.row);
+  };
+  const handleDelete = (e) => {
+    deleteQuiz(e.row.id);
+  };
 
   return (
     <Card style={{ height: 400, width: "100%", marginBottom: "15px" }}>
-      <DataGrid rows={rows} columns={columns} pageSize={5} checkboxSelection />
+      <DataGrid
+        rows={rows}
+        columns={columns}
+        pageSize={5}
+        onCellClick={handleClick}
+        onCellDoubleClick={handleDelete}
+      />
     </Card>
   );
 };
