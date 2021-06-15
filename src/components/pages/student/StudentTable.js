@@ -14,6 +14,7 @@ const StudentTable = () => {
     { field: "studentID", headerName: "student ID", width: 200 },
 
     { field: "tel", headerName: "Phone", width: 200 },
+    { field: "state", headerName: "State", width: 200 },
   ];
 
   const rows = students.map((item) => {
@@ -22,6 +23,7 @@ const StudentTable = () => {
       name: item.name,
       studentID: item.studentID,
       tel: item.tel,
+      state: item.state,
     };
   });
   const handleClick = (e) => {

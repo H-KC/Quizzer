@@ -33,6 +33,7 @@ const StudentForm = () => {
         studentID: Number(0),
         name: "",
         tel: "",
+        state: "new",
       });
     }
   }, [studentContext, current]);

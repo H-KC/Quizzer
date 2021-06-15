@@ -9,29 +9,35 @@ import ClassState from "./context/class/ClassState";
 import StudentState from "./context/student/StudentState";
 import QuizState from "./context/quiz/QuizState";
 import QuestionnaireState from "./context/questionnaire/QuestionnaireState";
+import TestState from "./context/test/TestState";
+import Test from "./components/pages/test/Test";
+import Home from "./components/pages/home/Home";
 
 function App() {
   return (
-    <QuestionnaireState>
-      <QuizState>
-        <StudentState>
-          <ClassState>
-            <Router>
-              <Navbar />
-              <div className='container'>
-                <Switch>
-                  {/* <Route exact path='/' component={Home} /> */}
-                  <Route exact path='/classe' component={Class} />
-                  <Route exact path='/student' component={student} />
-                  <Route exact path='/quiz' component={Quiz} />
-                  <Route exact path='/questionnaire' component={Question} />
-                </Switch>
-              </div>
-            </Router>
-          </ClassState>
-        </StudentState>
-      </QuizState>
-    </QuestionnaireState>
+    <TestState>
+      <QuestionnaireState>
+        <QuizState>
+          <StudentState>
+            <ClassState>
+              <Router>
+                <Navbar />
+                <div className='container'>
+                  <Switch>
+                    <Route exact path='/' component={Home} />
+                    <Route exact path='/classe' component={Class} />
+                    <Route exact path='/student' component={student} />
+                    <Route exact path='/quiz' component={Quiz} />
+                    <Route exact path='/questionnaire' component={Question} />
+                    <Route exact path='/test' component={Test} />
+                  </Switch>
+                </div>
+              </Router>
+            </ClassState>
+          </StudentState>
+        </QuizState>
+      </QuestionnaireState>
+    </TestState>
   );
 }
 
