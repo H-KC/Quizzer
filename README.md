@@ -1,6 +1,6 @@
 # QUIZZER
 -------------------
-Quizzer is a webapp that helps universities and centers to manage their tests and students in a much easier and fast way in addition quizzer calculate the final result and provide two way to see the result as a pdf or html page.
+Quizzer is a web app that helps universities and centers to manage their tests and students in a much easier and fast way in addition quizzer calculate the final result and provide two way to see the result as a pdf or html page.
 
 ![Capture](https://user-images.githubusercontent.com/49081526/150702123-3fc7709e-3b97-4d0e-a12a-a31a35f4936c.PNG)
 ![classes](https://user-images.githubusercontent.com/49081526/150702141-fc23fe28-1843-46da-bc7d-9083ffa1924d.PNG)
