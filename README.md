@@ -10,3 +10,5 @@ Quizzer is a webapp that helps universities and centers to manage their tests an
 ![33](https://user-images.githubusercontent.com/49081526/150702188-76c4c150-a0af-456e-8485-fb9f9eb6b136.PNG)
 ![Capture](https://user-images.githubusercontent.com/49081526/150702205-85aba4ef-8906-4095-8252-aaceb5b8ffd7.PNG)
 ![Capture](https://user-images.githubusercontent.com/49081526/150702217-30a806a2-cca1-4500-9105-3e708c642309.PNG)
+![33](https://user-images.githubusercontent.com/49081526/151553230-96287a84-f7f0-409d-9cc5-56c3c0b107cd.PNG)
+![Capture](https://user-images.githubusercontent.com/49081526/151553234-159c43b6-4823-49bf-b9f6-7b290e8db396.PNG)
